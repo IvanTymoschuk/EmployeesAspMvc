@@ -1,0 +1,35 @@
+﻿@model IEnumerable<WebApplication1.Models.Index>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="container">
+  
+    <table class="col-12 table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>SurName</th>
+                <th>Age</th>
+                <th>Salary</th>
+                <th>DepartmentName</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var el in Model)
+            {
+            <tr>
+                <td>@el.Name</td>
+                <td>@el.SurName</td>
+                <td>@el.Age</td>
+                <td>@el.Salary</td>
+                <td>@el.DepartmentName</td>
+            </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
