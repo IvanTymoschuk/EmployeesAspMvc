@@ -32,7 +32,7 @@ namespace WebApplication1
         protected override void Seed(Model context)
         {
            var emps = new List<Employee>();
-            var dep = new Department { Name = "WaterD Department", Descriptopn = "Specialized on provide water to all factory points" };
+            var dep = new Department { Name = "Water Department", Descriptopn = "Specialized on provide water to all factory points" };
             emps.Add(new Employee() { Name = "Michael", SurName = "Baumer", Department = dep, Age = 45, Login = "qwe@a.a", Password = "12345678", Salary = 25000 });
             emps.Add(new Employee() { Name = "Maryna", SurName = "Pavlova", Department = dep, Age = 25, Login = "qee@a.a", Password = "12345678", Salary = 13000 });
 

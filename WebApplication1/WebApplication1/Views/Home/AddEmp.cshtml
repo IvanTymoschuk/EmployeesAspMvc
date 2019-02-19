@@ -1,0 +1,49 @@
+﻿@model WebApplication1.Models.AddEmp
+@{
+    ViewBag.Title = "AddEmp";
+    var myDeps = Model.deps;
+}
+
+<h2>AddEmp</h2>
+
+@{ using (@Html.BeginForm("AddEmp", "Home", FormMethod.Post))
+    {
+
+        <div class="form-group">
+
+            @Html.TextBoxFor(Model => Model.Email, new { placeholder = "Email" })
+        </div>
+
+        <div class="form-group">
+
+            @Html.TextBoxFor(Model => Model.Password, new { placeholder = "Password" })
+        </div>
+
+        <div class="form-group">
+
+            @Html.TextBoxFor(Model => Model.Name, new { placeholder = "Name" })
+        </div>
+        <div class="form-group">
+
+            @Html.TextBoxFor(Model => Model.SurName, new { placeholder = "SurName" })
+        </div>
+        <div class="form-group">
+
+            @Html.TextBoxFor(Model => Model.Age, new { placeholder = "Age" })
+        </div>
+        <div class="form-group">
+
+            @Html.TextBoxFor(Model => Model.Salary, new { placeholder = "Salary" })
+        </div>
+        <div class="input-group mb-3">
+
+
+            @Html.DropDownListFor(Model => Model.DepName, new SelectList(Model.deps, "Value", "Text"))
+
+
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    }
+}
+
+

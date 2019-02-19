@@ -162,6 +162,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Model.cs" />
+    <Compile Include="Models\AddEmp.cs" />
     <Compile Include="Models\Index.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -203,6 +204,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\AddEmp.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

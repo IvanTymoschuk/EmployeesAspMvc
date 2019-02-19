@@ -28,8 +28,39 @@ namespace WebApplication1.Controllers
             }
             return View(mymodel);
         }
+        [HttpPost]
+        public ActionResult AddEmp(AddEmp emp)
+        {
+            model.Employees.Add(new DbModels.Employee()
+            {
+                Name = emp.Name,
+                SurName = emp.SurName,
+                Login = emp.Email,
+                Password = emp.Password,
+                Salary = emp.Salary,
+                Department = model.Departments.Where(x => x.Name == emp.DepName).Single(),
+                Age = emp.Age,
+               
+            });
+            emp.deps.AddRange(model.Departments.Select(d => new SelectListItem { Text = d.Name, Value = d.Name }).ToArray());
 
-        public ActionResult About()
+
+            model.SaveChanges();
+            return View();
+        }
+
+        public ActionResult AddEmp()
+        {
+            AddEmp emp = new AddEmp();
+            foreach(var el in model.Departments)
+            {
+                emp.deps.Add(new SelectListItem() { Text = el.Name, Value = el.Name });
+            }
+
+            return View(emp);
+        }
+
+            public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
 
